@@ -1,0 +1,30 @@
+{
+    	"name": "手机小说网",
+	"url": "www.mobshu.cc",
+	"version": 100,
+	"search": {
+		"url": "http://www.mobshu.cc/plus/search.php?kwtype=0&searchtype&q=${key}",
+        	"list": "div.container > div.so",
+        	"name": "h2",
+        	"author": ".infos > span:nth-child(1) > a",
+        	"cover": "img",
+        	"summary": "p",
+        	"detail": "h2 > a"
+	},
+	"detail": {
+        	"status": ".infos > span:nth-child(3)",
+        	"update": ".upd@match->(?<=[0-9]·)(.+)(?=[0-9]·)",
+        	"lastChapter": ".udp > a:nth-child(2)"
+       	},
+	"catalog": {
+        	"list": ".book_list",
+        	"orderBy": 0,
+        	"name": "a",
+        	"chapter": "a"
+	},
+	"chapter": {
+        	"content": ".contentbox",
+        	"purify": ["参考"],
+		"page": ".chapter_Turnpage > a:nth-child(4)"
+	}
+}
